@@ -1,0 +1,7 @@
+{
+  "name": "Shaah Infra - Construction Services",
+  "description": "Professional construction, interior design, and project planning services for your dream home.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
