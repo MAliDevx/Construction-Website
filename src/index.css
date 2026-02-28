@@ -33,3 +33,13 @@
 .section-padding {
   @apply py-16 md:py-24 px-4 md:px-8 max-w-7xl mx-auto;
 }
+
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; 
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
+}

@@ -17,8 +17,7 @@ export const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4"
-          />
+className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] max-w-4xl max-h-[90vh] bg-gradient-to-br from-[#FF8C00] to-[#FF4500] rounded-3xl md:rounded-[40px] shadow-2xl z-[101] overflow-y-auto scrollbar-hide"          />
 
           {/* Modal Container */}
           <motion.div
