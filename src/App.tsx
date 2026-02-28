@@ -7,10 +7,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { ServicesPage } from './pages/ServicesPage';
-import { TestimonialPage } from './pages/TestimonialPage';
 import { PackagesPage } from './pages/PackagesPage';
 import { BookingProvider } from './context/BookingContext';
-
+import {ConstructionServices} from './pages/ConstructionServices';
+import { InteriorDesigningServices } from './pages/InteriorDesigningServices';
+import { ProjectAnalysisServices } from './pages/ProjectAnalysis.service';
+import { ProjectPlanningServices } from './pages/ProjectPlaningService';
 export default function App() {
   return (
     <BookingProvider>
@@ -21,7 +23,10 @@ export default function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/packages" element={<PackagesPage />} />
-            <Route path="/testimonials" element={<TestimonialPage />} />
+            <Route path="/construction" element={<ConstructionServices />} />
+            <Route path="/interior-designing" element={<InteriorDesigningServices />} />
+            <Route path="/project-analysis" element={<ProjectAnalysisServices />} />
+            <Route path="/project-planning" element={<ProjectPlanningServices />} />
           </Routes>
         </div>
       </BrowserRouter>

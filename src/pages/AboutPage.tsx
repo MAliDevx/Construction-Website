@@ -13,8 +13,8 @@ export const AboutPage = () => {
   <PageHero
     heading={
       <>
-        Building Trust.<br />
-        <span >Delivering Excellence.</span>
+        Building Trust<br />
+        <span >Delivering Excellence</span>
       </>
     }
     subheading="We are a dedicated construction company committed to delivering high-quality, reliable, and innovative building solutions. With years of experience and a passion for excellence."

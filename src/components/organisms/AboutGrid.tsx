@@ -2,11 +2,11 @@ import { Heading, Text } from '../atoms/Typography';
 
 export const AboutGrid = () => {
   return (
-    <section className=" bg-[#f4f4f4]">
-      <div className="text-center mb-6 ">
+    <section className="bg-[#F8F8F8] ">
+      <div className="text-center mb-6">
         <Heading
           level={2}
-          className="text-[#FF7A00] text-4xl md:text-5xl font-bold pt-26"
+          className="text-[#FF7A00] text-4xl md:text-5xl font-bold pt-26 pb-5"
         >
           Built for Contractors Who Want Scale
         </Heading>
@@ -83,6 +83,7 @@ export const AboutGrid = () => {
 
         </div>
       </div>
+      
     </section>
   );
 };

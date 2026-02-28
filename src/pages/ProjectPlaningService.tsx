@@ -1,16 +1,26 @@
 import { Navbar } from '../components/organisms/Navbar';
 import { TestimonialsContactAndFooterTemplate } from '../components/templates/TestimonialsAndContact';
-import { ConstructionServiceHero } from '../components/organisms/ConstructionServiceHero';
-import { ConstructionServiceContent } from '../components/organisms/ConstructionServiceContent';
+import { ServicesGrid } from '../components/organisms/ServicesGrid';
 import { MessageCircle } from 'lucide-react';
+import { PageHero } from '../components/organisms/PageHero';
+import Hero from '../assets/Services/ProjectPlaning.png';
 
-export const TestimonialPage = () => {
+export const  ProjectPlanningServices = () => {
   return (
     <div className="relative">
       <Navbar />
       <main>
-        <ConstructionServiceHero />
-        <ConstructionServiceContent />
+          <PageHero
+            heading={
+              <> 
+                Smart Planning for  <br />
+                <span > Stronger Project Execution</span>
+              </>
+            }
+            imageSrc={Hero}
+            imageAlt="Project Planning Services Hero"
+          />
+        <ServicesGrid />
       </main>
       <TestimonialsContactAndFooterTemplate />
 

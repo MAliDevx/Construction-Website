@@ -15,7 +15,9 @@ export const PastProjects = () => {
   ];
 
   return (
-    <section className="section-padding bg-slate-50">
+    <section className="bg-[#F8F8F8] pt-0">
+          <div className="section-padding">
+
       <div className="text-center mb-16 space-y-4">
         <Heading level={2} className="text-4xl md:text-5xl">Our Past Projects</Heading>
         <Text variant="muted" className="max-w-2xl mx-auto">
@@ -42,6 +44,7 @@ export const PastProjects = () => {
           </motion.div>
         ))}
       </div>
+    </div>
     </section>
   );
 };

@@ -2,8 +2,7 @@ import { ReactNode } from 'react';
 import { motion } from 'motion/react';
 import { Heading, Text } from '../atoms/Typography';
 import { Button } from '../atoms/Button';
-import { useBooking } from '../../context/BookingContext';
-
+import { Link } from 'react-router-dom';
 interface StatCardProps {
   number: string;
   label: string;
@@ -63,11 +62,10 @@ interface ServiceCardProps {
   title: string;
   description: string;
   index: number;
-  key?: any;
+  link: string;
 }
 
-export const ServiceCard = ({ image, title, description, index }: ServiceCardProps) => {
-  const { openBookingModal } = useBooking();
+export const ServiceCard = ({ image, title, description, index, link }: ServiceCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -93,9 +91,9 @@ export const ServiceCard = ({ image, title, description, index }: ServiceCardPro
           <Button 
             variant="primary" 
             className="px-10 py-3 rounded-xl shadow-lg shadow-primary/20"
-            onClick={openBookingModal}
+            
           >
-            Inquiry Now
+            <Link to={link}>Inquiry Now</Link>
           </Button>
         </div>
       </div>

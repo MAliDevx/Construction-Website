@@ -1,15 +1,26 @@
 import { Navbar } from '../components/organisms/Navbar';
 import { TestimonialsContactAndFooterTemplate } from '../components/templates/TestimonialsAndContact';
-import { ServicesHero } from '../components/organisms/ServicesHero';
 import { ServicesGrid } from '../components/organisms/ServicesGrid';
 import { MessageCircle } from 'lucide-react';
+import { PageHero } from '../components/organisms/PageHero';
+import Hero from '../assets/Services/Hero.png';
 
 export const ServicesPage = () => {
   return (
     <div className="relative">
       <Navbar />
       <main>
-        <ServicesHero />
+          <PageHero
+            heading={
+              <> 
+                Complete Construction<br />
+                <span >Solutions You Can Trust</span>
+              </>
+            }
+            subheading="We offer a full range of construction services designed to deliver quality, efficiency, and reliability. From planning and design to execution and finishing, our expert team ensures every project meets the highest standards."
+            imageSrc={Hero}
+            imageAlt="About Us Hero"
+          />
         <ServicesGrid />
       </main>
       <TestimonialsContactAndFooterTemplate />
