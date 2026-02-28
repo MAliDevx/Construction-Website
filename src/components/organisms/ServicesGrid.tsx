@@ -1,31 +1,34 @@
 import { useNavigate } from 'react-router-dom';
 import { Heading, Text } from '../atoms/Typography';
 import { ServiceCard } from '../molecules/Cards';
-
+import ConstructionService from '../../assets/Services/ServiceMissionPic.png';
+import InteriorDesigning from '../../assets/Services/InteriorDesigningServicesAbout.png';
+import ProjectPlanning from '../../assets/Services/ProjectPlaningAbout.png';
+import ProjectAnalysis from '../../assets/Services/ProjectAnalysisAbout.png';
 export const ServicesGrid = () => {
   const services = [
     {
       title: 'Construction',
       description: 'We provide reliable and high-quality construction services for residential, commercial, and industrial projects. Our experienced team manages every stage of the construction process, from planning and foundation to final completion. We focus on using quality materials, modern techniques, and strict safety standards to deliver strong structures.',
-      image: 'https://picsum.photos/seed/const1/800/600',
+      image: ConstructionService,
       link: '/construction'
     },
     {
       title: 'Interior Designing',
       description: 'Our interior designing services are focused on creating modern, stylish, and functional spaces for residential and commercial projects. We carefully plan every detail, from layout and the materials to lighting and décor, ensuring a perfect balance of beauty, comfort, and usability.',
-      image: 'https://picsum.photos/seed/interior1/800/600',
+      image: InteriorDesigning,
       link: '/interior-designing'
     },
     {
       title: 'Project Planning',
       description: 'We provide detailed and strategic project planning to ensure smooth and successful construction. Our team carefully plans timelines, resources, budgets, and workflows to minimize risks and maximize efficiency. We ensure every phase is organized and aligned to deliver projects on time and within budget.',
-      image: 'https://picsum.photos/seed/plan1/800/600',
+      image: ProjectPlanning,
       link: '/project-planning'
     },
     {
       title: 'Project Analysis',
       description: 'We conduct detailed project analysis to evaluate feasibility, requirements, costs, and potential risks before construction begins. Our team ensures proper planning and informed decision-making, helping to improve efficiency, reduce risks, and ensure successful project execution.',
-      image: 'https://picsum.photos/seed/analysis1/800/600',
+      image: ProjectAnalysis,
       link: '/project-analysis'
     }
   ];

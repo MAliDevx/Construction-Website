@@ -21,7 +21,8 @@
 
 @layer base {
   body {
-    @apply font-sans text-secondary bg-white;
+    @apply font-sans text-secondary bg-[#F8F8F8];
+
   }
 }
 

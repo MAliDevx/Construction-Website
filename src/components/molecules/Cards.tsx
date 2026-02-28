@@ -16,7 +16,7 @@ export const StatCard = ({ number, label, index }: StatCardProps) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay: index * 0.1 }}
-    className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center flex flex-col items-center justify-center"
+    className="bg-white p-8 rounded-2xl border border-0 text-center flex flex-col items-center justify-center"
   >
     <Heading level={2} className="text-primary mb-2">{number}</Heading>
     <Text variant="muted" className="font-medium uppercase tracking-wider text-xs">{label}</Text>
@@ -90,7 +90,7 @@ export const ServiceCard = ({ image, title, description, index, link }: ServiceC
         <div className="mt-auto pt-4">
           <Button 
             variant="primary" 
-            className="px-10 py-3 rounded-xl shadow-lg shadow-primary/20"
+            className="px-10 py-3 rounded-[8px] shadow-lg shadow-primary/20"
             
           >
             <Link to={link}>Inquiry Now</Link>

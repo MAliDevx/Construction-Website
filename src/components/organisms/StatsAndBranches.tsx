@@ -11,7 +11,7 @@ export const StatsSection = () => {
   ];
 
   return (
-    <section className="section-padding">
+    <section className="section-padding bg-[#F8F8F8]">
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
         {stats.map((stat, index) => (
           <StatCard 

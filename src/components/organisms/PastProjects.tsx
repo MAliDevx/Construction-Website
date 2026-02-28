@@ -1,17 +1,25 @@
 import { Heading, Text } from '../atoms/Typography';
 import { motion } from 'motion/react';
-
+import Project1 from '../../assets/PastProject/Project1.png';
+import Project2 from '../../assets/PastProject/Project2.png';
+import Project3 from '../../assets/PastProject/Project3.png';
+import Project4 from '../../assets/PastProject/Project4.png';
+import Project5 from '../../assets/PastProject/Project5.png';
+import Project6 from '../../assets/PastProject/Project6.png';
+import Project7 from '../../assets/PastProject/Project7.png';
+import Project8 from '../../assets/PastProject/Project8.png';
+import Project9 from '../../assets/PastProject/Project9.png';
 export const PastProjects = () => {
   const projects = [
-    { id: 1, image: 'https://picsum.photos/seed/proj1/600/450' },
-    { id: 2, image: 'https://picsum.photos/seed/proj2/600/450' },
-    { id: 3, image: 'https://picsum.photos/seed/proj3/600/450' },
-    { id: 4, image: 'https://picsum.photos/seed/proj4/600/450' },
-    { id: 5, image: 'https://picsum.photos/seed/proj5/600/450' },
-    { id: 6, image: 'https://picsum.photos/seed/proj6/600/450' },
-    { id: 7, image: 'https://picsum.photos/seed/proj7/600/450' },
-    { id: 8, image: 'https://picsum.photos/seed/proj8/600/450' },
-    { id: 9, image: 'https://picsum.photos/seed/proj9/600/450' },
+    { id: 1, image: Project1 },
+    { id: 2, image: Project2 },
+    { id: 3, image: Project3 },
+    { id: 4, image: Project4 },
+    { id: 5, image: Project5 },
+    { id: 6, image: Project6 },
+    { id: 7, image: Project7 },
+    { id: 8, image: Project8 },
+    { id: 9, image: Project9 },
   ];
 
   return (

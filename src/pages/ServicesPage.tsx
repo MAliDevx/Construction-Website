@@ -4,6 +4,7 @@ import { ServicesGrid } from '../components/organisms/ServicesGrid';
 import { MessageCircle } from 'lucide-react';
 import { PageHero } from '../components/organisms/PageHero';
 import Hero from '../assets/Services/Hero.png';
+import { StatsSection } from '../components/organisms/StatsAndBranches';
 
 export const ServicesPage = () => {
   return (
@@ -21,6 +22,7 @@ export const ServicesPage = () => {
             imageSrc={Hero}
             imageAlt="About Us Hero"
           />
+          <StatsSection />
         <ServicesGrid />
       </main>
       <TestimonialsContactAndFooterTemplate />

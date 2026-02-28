@@ -1,26 +1,16 @@
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
-// ─── Types ───────────────────────────────────────────────────────────────────
 
 interface PageHeroProps {
-  /** Large headline – supports JSX for line breaks / highlights */
   heading: ReactNode;
-  /** Subheading / lead paragraph below the headline */
   subheading?: ReactNode;
-  /** Full image URL used as the background */
   imageSrc: string;
-  /** Alt text for the background image */
   imageAlt?: string;
-  /** Optional eyebrow label above the heading */
   eyebrow?: string;
-  /** Overlay darkness 0–1, default 0.52 */
   overlayOpacity?: number;
-  /** Optional bottom-slot: breadcrumbs, CTA buttons, etc. */
   children?: ReactNode;
-  /** Min height, default "60vh" */
   minHeight?: string;
-  /** Align content: "left" | "center" (default "center") */
   align?: "left" | "center";
 }
 
@@ -44,7 +34,6 @@ export const PageHero = ({
       className="relative flex items-center justify-center overflow-hidden pt-20"
       style={{ minHeight }}
     >
-      {/* ── Background image ── */}
       <motion.div
         className="absolute inset-0 z-0"
         initial={{ scale: 1.05 }}
@@ -54,31 +43,21 @@ export const PageHero = ({
         <img
           src={imageSrc}
           alt={imageAlt}
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-contain object-center"
           referrerPolicy="no-referrer"
         />
       </motion.div>
 
-      {/* ── Dark overlay matching reference image ── */}
       <div
         className="absolute inset-0 z-[1]"
-        style={{
-          background: `linear-gradient(
-            to bottom,
-            rgba(10,20,50,${overlayOpacity + 0.1}) 0%,
-            rgba(10,20,50,${overlayOpacity}) 50%,
-            rgba(10,20,50,${overlayOpacity + 0.15}) 100%
-          )`,
-        }}
+       
       />
 
-      {/* ── Content ── */}
       <div
         className={`relative z-10 w-full max-w-4xl mx-auto px-6 md:px-12 py-16 md:py-24 ${
           isCenter ? "text-center" : "text-left"
         }`}
       >
-        {/* Optional eyebrow */}
         {eyebrow && (
           <motion.p
             initial={{ opacity: 0, y: 10 }}

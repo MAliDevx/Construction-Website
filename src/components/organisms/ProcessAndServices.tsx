@@ -3,14 +3,19 @@ import { motion } from "framer-motion";
 import {  Construction, Palette, ClipboardList, FileCheck } from "lucide-react";
 import whychooseus from '../../assets/Home/Why-Chose-US.png';
 import whychooseus2 from '../../assets/Home/Why-Chose-US2.png';
+import {  useNavigate } from 'react-router-dom';
+import { useBooking } from '@/src/context/BookingContext';
 
 export const ServicesSection = () => {
+   
+  const navigate = useNavigate();
 const services = [
-  { number: "01", title: "Construction", icon: Construction },
-  { number: "02", title: "Interior Designing", icon: Palette },
-  { number: "03", title: "Project Planning", icon: ClipboardList },
-  { number: "04", title: "Approvals", icon: FileCheck },
+  { number: "01", title: "Construction", icon: Construction, link: "/construction" },
+  { number: "02", title: "Interior Designing", icon: Palette, link: "/interior-designing" },
+  { number: "03", title: "Project Planning", icon: ClipboardList, link: "/project-planning" },
+  { number: "04", title: "Approvals", icon: FileCheck, link: "/project-analysis" },
 ];
+  const { openBookingModal } = useBooking();
 
   return (
 <section
@@ -26,25 +31,6 @@ const services = [
         }}
       />
 
-      <div className="absolute top-0 right-6 md:right-16 w-36 h-36 md:w-48 md:h-48 opacity-30">
-        <svg viewBox="0 0 100 100" className="w-full h-full" style={{ animation: "spin 18s linear infinite" }}>
-          <circle
-            cx="50" cy="50" r="46"
-            fill="none"
-            stroke="white"
-            strokeWidth="1.5"
-            strokeDasharray="3 7"
-          />
-          <circle
-            cx="50" cy="50" r="36"
-            fill="none"
-            stroke="white"
-            strokeWidth="0.8"
-            strokeDasharray="2 8"
-          />
-        </svg>
-        <style>{`@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }`}</style>
-      </div>
 
       <div className="relative z-10 max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
@@ -68,6 +54,7 @@ const services = [
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
                 whileHover={{ x: 8 }}
+                
                 className="flex items-center gap-5 bg-[#EDEDED] rounded-2xl px-6 py-5 cursor-pointer transition-all duration-300 hover:shadow-lg"
               >
                 {/* Number Box */}
@@ -85,7 +72,7 @@ const services = [
 
           {/* CTA */}
           <motion.button
-            onClick={() => navigate("/contact")}
+            onClick={openBookingModal}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="flex items-center gap-3 bg-white text-[#F26522] font-bold px-8 py-4 rounded-xl shadow-lg transition-all duration-200"

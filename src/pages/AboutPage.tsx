@@ -5,6 +5,7 @@ import { AboutGrid } from '../components/organisms/AboutGrid';
 import { PastProjects } from '../components/organisms/PastProjects';
 import { MessageCircle } from 'lucide-react';
 import AboutUs from '../assets/About/about-hero.png';
+import { StatsSection } from '../components/organisms/StatsAndBranches';
 export const AboutPage = () => {
   return (
     <div className="relative">
@@ -21,6 +22,7 @@ export const AboutPage = () => {
     imageSrc={AboutUs}
     imageAlt="About Us Hero"
   />
+  <StatsSection />
         <AboutGrid />
         <PastProjects />
       </main>

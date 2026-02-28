@@ -4,6 +4,10 @@ import { ServicesGrid } from '../components/organisms/ServicesGrid';
 import { MessageCircle } from 'lucide-react';
 import { PageHero } from '../components/organisms/PageHero';
 import Hero from '../assets/Services/ProjectAnalysis.png';
+import { ProcessSection } from '../components/organisms/ConstructionProcess';
+import { PastProjects } from '../components/organisms/PastProjects';
+import { AboutServiceSection } from '../components/organisms/AboutServiceSection';
+import AboutService from '../assets/Services/ProjectAnalysisAbout.png';
 
 export const  ProjectAnalysisServices = () => {
   return (
@@ -20,7 +24,23 @@ export const  ProjectAnalysisServices = () => {
             imageSrc={Hero}
             imageAlt="Project Analysis Services Hero"
           />
-        <ServicesGrid />
+
+
+           <AboutServiceSection
+            heading="Complete Construction Solutions For Residential & Commercial Projects"
+            description="We Provide End-To-End Construction Services From Planning And Design To Execution And Final Delivery. Our Team Ensures Every Project Meets High Quality, Safety, And Durability Standards. Because We Don't Just Construct , We Provide:"
+            features={[
+              { number: '01', label: 'Experienced Engineers' },
+              { number: '02', label: 'High Quality Materials' },
+              { number: '03', label: 'On-Time Project Delivery' },
+              { number: '04', label: '24/7 Support' },
+            ]}
+            imageSrc={AboutService}
+            imageAlt="Construction site"
+          />
+               
+                <ProcessSection />
+                <PastProjects />
       </main>
       <TestimonialsContactAndFooterTemplate />
 

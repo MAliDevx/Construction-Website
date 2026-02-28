@@ -2,6 +2,7 @@ import { Navbar } from '../components/organisms/Navbar';
 import { TestimonialsContactAndFooterTemplate } from '../components/templates/TestimonialsAndContact';
 import { PricingSection } from '../components/organisms/PricingSection';
 import { MessageCircle } from 'lucide-react';
+import { ServicesSection } from '../components/organisms/ProcessAndServices';
 
 export const PackagesPage = () => {
   return (
@@ -10,6 +11,8 @@ export const PackagesPage = () => {
       <main className="pt-20">
         <PricingSection />
       </main>
+              <ServicesSection />
+      
       <TestimonialsContactAndFooterTemplate />
 
       {/* WhatsApp Floating Button */}

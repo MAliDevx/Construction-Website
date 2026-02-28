@@ -58,14 +58,17 @@ const PricingCard = ({ title, price, originalPrice, features, highlighted, icon,
       ))}
     </ul>
 
-    <Button 
-      variant={highlighted ? 'secondary' : 'primary'} 
-      className={`w-full py-4 rounded-2xl font-bold text-lg shadow-lg ${
-        highlighted ? 'bg-white text-primary hover:bg-slate-50' : ''
-      }`}
-    >
-      Start 7-day free trial
-    </Button>
+<Button
+  className={`
+    ${highlighted 
+      ? 'bg-white text-orange-500 hover:bg-orange-50 shadow-lg' // ✅ text set to orange
+      : 'bg-primary text-white hover:bg-primary-hover shadow-lg shadow-primary/20'
+    }
+    inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-200 active:scale-95 gap-2
+  `}
+>
+  Start 7-day free trial
+</Button>
   </motion.div>
 );
 
