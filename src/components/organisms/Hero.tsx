@@ -22,10 +22,10 @@ export const Hero = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 w-full grid lg:grid-cols-2 gap-12 items-center">
         <div className="text-white space-y-8">
           <Heading level={1} className="max-w-xl">
-            Construct Your Dream Home With Our Expert Services
+            Build Your Dream. We Deliver Excellence.
           </Heading>
           <Text variant="lead" className="text-white/80 max-w-lg">
-            We turn your vision into reality with professional design, planning, and construction services tailored to your needs. From concept to completion, our expert team ensures quality, reliability, and excellence in every detail.
+            At Shaah Infra, we believe in transparent, honest construction that respects your timeline and budget. Led by Ali Khan, our expert team transforms your vision into beautiful, quality structures—whether it's your dream home, office space, or complete interior transformation. Every project is treated with the care it deserves, combining expertise with affordability.
           </Text>
           <Button 
             variant="primary" 

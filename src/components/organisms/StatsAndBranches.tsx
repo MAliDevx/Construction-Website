@@ -12,6 +12,14 @@ export const StatsSection = () => {
 
   return (
     <section className="section-padding bg-[#F8F8F8]">
+           <div className="text-center mb-12 space-y-4">
+             <Heading level={2} className="text-4xl md:text-5xl">
+               Trusted by Thousands of Homeowners
+             </Heading>
+             <Text variant="lead" className="max-w-2xl mx-auto text-slate-600">
+               Shaah Infra has built quality homes and delivered dreams across multiple cities. Our track record speaks to our commitment to excellence, transparency, and timely delivery.
+             </Text>
+           </div>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
         {stats.map((stat, index) => (
           <StatCard 
@@ -39,8 +47,12 @@ export const BranchesSection = () => {
   return (
     <section className="bg-slate-50 section-padding">
       <div className="text-center mb-16 space-y-4">
-        <Heading level={2}>Explore our Branches</Heading>
-        <Text variant="muted">We are available in 10+ cities</Text>
+         <Heading level={2} className="text-4xl md:text-5xl">
+           Building Across Andhra Pradesh
+         </Heading>
+         <Text variant="lead" className="max-w-2xl mx-auto text-slate-600">
+           Whether you're in Anantapur, Vijayawada, Kurnool, or any of our service cities, Shaah Infra is here to serve you with the same quality, expertise, and commitment. Find us in 10+ cities across Andhra Pradesh.
+         </Text>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
         {branches.map((branch, index) => (

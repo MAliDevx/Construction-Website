@@ -1,6 +1,7 @@
-import { X, Mail, Phone, MapPin, Send, Facebook, Instagram, Twitter } from 'lucide-react';
+import { X, Mail, Phone, MapPin, Send, CheckCircle, Clock, Users } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Heading, Text } from '../atoms/Typography';
+import { useState } from 'react';
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -8,115 +9,243 @@ interface BookingModalProps {
 }
 
 export const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+    setTimeout(() => {
+      onClose();
+      setSubmitted(false);
+    }, 3000);
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
         <>
+          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] max-w-4xl max-h-[90vh] bg-gradient-to-br from-[#FF8C00] to-[#FF4500] rounded-3xl md:rounded-[40px] shadow-2xl z-[101] overflow-y-auto scrollbar-hide"          />
+            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[100]"
+          />
 
           {/* Modal Container */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            initial={{ opacity: 0, scale: 0.85, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] max-w-4xl max-h-[90vh] bg-gradient-to-br from-[#FF8C00] to-[#FF4500] rounded-3xl md:rounded-[40px] shadow-2xl z-[101] overflow-y-auto scrollbar-hide"
+            exit={{ opacity: 0, scale: 0.85, y: 30 }}
+            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+            className="fixed inset-4 md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-[95%] md:max-w-5xl max-h-[95vh] md:max-h-[90vh] bg-white rounded-2xl md:rounded-3xl shadow-2xl z-[101] overflow-hidden"
           >
-            {/* Close Button */}
+            {/* Success State */}
+            {submitted && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 flex flex-col items-center justify-center gap-6 z-50 rounded-2xl md:rounded-3xl"
+              >
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ type: 'spring', delay: 0.2 }}
+                >
+                  <CheckCircle size={80} className="text-green-500" strokeWidth={1.5} />
+                </motion.div>
+                <div className="text-center space-y-2">
+                  <Heading level={2} className="text-2xl md:text-3xl text-green-700">Request Submitted!</Heading>
+                  <Text className="text-green-600">We'll contact you within 24 hours to discuss your project.</Text>
+                </div>
+              </motion.div>
+            )}
+
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 md:top-6 md:right-6 text-white/80 hover:text-white transition-colors z-20 bg-black/20 md:bg-transparent p-2 rounded-full"
+              className="absolute top-4 right-4 md:top-6 md:right-6 z-20 bg-gray-100 hover:bg-gray-200 text-gray-700 p-2.5 rounded-full transition-colors"
             >
-              <X size={24} className="md:w-7 md:h-7" />
+              <X size={24} />
             </button>
 
-            <div className="grid md:grid-cols-2 gap-0 h-full">
-              {/* Left Side: Info */}
-              <div className="p-8 md:p-14 text-white space-y-6 md:space-y-8">
-                <div className="space-y-3 md:space-y-4">
-                  <Heading level={2} className="text-3xl md:text-4xl font-bold leading-tight">
-                    Request Project Estimation
-                  </Heading>
-                  <Text className="text-white/80 text-xs md:text-sm">
-                    Fill in your details below to get a project estimation
-                  </Text>
+            <div className="grid grid-cols-1 md:grid-cols-2 h-full overflow-hidden">
+              {/* Left Side: Info Panel */}
+              <div className="hidden md:flex bg-gradient-to-br from-[#F26522] to-orange-600 p-12 text-white flex-col justify-between">
+                <div className="space-y-8">
+                  <div>
+                    <Heading level={2} className="text-4xl font-bold text-white leading-tight">
+                      Get Your Free Consultation
+                    </Heading>
+                    <p className="text-white/80 mt-3 text-base leading-relaxed">
+                      Share your project details and connect with our expert team at Shaah Infra.
+                    </p>
+                  </div>
+
+                  <div className="space-y-4 bg-white/15 p-6 rounded-2xl backdrop-blur-sm border border-white/20">
+                    <div className="flex items-start gap-3">
+                      <CheckCircle size={20} className="shrink-0 mt-1" />
+                      <div>
+                        <p className="font-semibold text-white">Free Consultation</p>
+                        <p className="text-white/70 text-sm">No hidden charges, completely free.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Clock size={20} className="shrink-0 mt-1" />
+                      <div>
+                        <p className="font-semibold text-white">Quick Response</p>
+                        <p className="text-white/70 text-sm">We'll contact you within 24 hours.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Users size={20} className="shrink-0 mt-1" />
+                      <div>
+                        <p className="font-semibold text-white">Expert Team</p>
+                        <p className="text-white/70 text-sm">Experienced professionals at your service.</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="space-y-3 md:space-y-4">
-                  <div className="flex items-center gap-3 md:gap-4 bg-white/20 p-3 md:p-4 rounded-xl md:rounded-2xl">
-                    <Mail size={18} className="shrink-0 md:w-5 md:h-5" />
-                    <span className="text-xs md:text-sm font-medium truncate">SaulDesign@gmail.com</span>
+                {/* Contact Info */}
+                <div className="space-y-3 pt-8 border-t border-white/20">
+                  <div className="flex items-center gap-3">
+                    <Phone size={18} />
+                    <span>+91 9705779992</span>
                   </div>
-                  <div className="flex items-center gap-3 md:gap-4 bg-white/20 p-3 md:p-4 rounded-xl md:rounded-2xl">
-                    <Phone size={18} className="shrink-0 md:w-5 md:h-5" />
-                    <span className="text-xs md:text-sm font-medium">+123 456 789</span>
+                  <div className="flex items-center gap-3">
+                    <Mail size={18} />
+                    <span className="truncate">info@shaahinfra.com</span>
                   </div>
-                  <div className="flex items-center gap-3 md:gap-4 bg-white/20 p-3 md:p-4 rounded-xl md:rounded-2xl">
-                    <MapPin size={18} className="shrink-0 md:w-5 md:h-5" />
-                    <span className="text-xs md:text-sm font-medium">123 Street 456 House</span>
+                  <div className="flex items-start gap-3">
+                    <MapPin size={18} className="shrink-0 mt-0.5" />
+                    <span className="text-sm leading-relaxed">Kalyandurgam Road, Anantapur, AP 515001</span>
                   </div>
-                </div>
-
-                <div className="flex gap-5 md:gap-6 pt-2 md:pt-4">
-                  <a href="#" className="hover:scale-110 transition-transform"><Facebook size={18} className="md:w-5 md:h-5" /></a>
-                  <a href="#" className="hover:scale-110 transition-transform"><Instagram size={18} className="md:w-5 md:h-5" /></a>
-                  <a href="#" className="hover:scale-110 transition-transform"><Twitter size={18} className="md:w-5 md:h-5" /></a>
                 </div>
               </div>
 
               {/* Right Side: Form */}
-              <div className="p-8 md:p-14 bg-white/10 backdrop-blur-md">
-                <form className="space-y-4 md:space-y-6" onSubmit={(e) => e.preventDefault()}>
-                  <div className="space-y-1.5 md:space-y-2">
-                    <label className="text-white text-[10px] md:text-xs font-bold uppercase tracking-wider">Full Name</label>
+              <div className="p-6 md:p-10 overflow-y-auto">
+                {/* Mobile Header */}
+                <div className="md:hidden mb-6 space-y-2">
+                  <Heading level={3} className="text-2xl text-secondary">Free Consultation</Heading>
+                  <Text className="text-gray-600 text-sm">Tell us about your project and get expert guidance.</Text>
+                </div>
+
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  {/* Full Name */}
+                  <div className="space-y-2">
+                    <label className="block text-secondary text-sm font-bold uppercase tracking-wide">Full Name</label>
                     <input 
                       type="text" 
-                      placeholder="James Albert"
-                      className="w-full bg-white text-secondary px-4 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl outline-none focus:ring-2 focus:ring-white/50 transition-all text-sm md:text-base"
+                      placeholder="Enter your name"
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F26522] focus:border-transparent transition-all text-sm"
                     />
                   </div>
 
-                  <div className="space-y-1.5 md:space-y-2">
-                    <label className="text-white text-[10px] md:text-xs font-bold uppercase tracking-wider">Phone Number</label>
+                  {/* Email */}
+                  <div className="space-y-2">
+                    <label className="block text-secondary text-sm font-bold uppercase tracking-wide">Email Address</label>
+                    <input 
+                      type="email" 
+                      placeholder="your@email.com"
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F26522] focus:border-transparent transition-all text-sm"
+                    />
+                  </div>
+
+                  {/* Phone */}
+                  <div className="space-y-2">
+                    <label className="block text-secondary text-sm font-bold uppercase tracking-wide">Phone Number</label>
                     <input 
                       type="tel" 
-                      placeholder="+91234567890"
-                      className="w-full bg-white text-secondary px-4 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl outline-none focus:ring-2 focus:ring-white/50 transition-all text-sm md:text-base"
+                      placeholder="+91 XXXXXXXXXX"
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F26522] focus:border-transparent transition-all text-sm"
                     />
                   </div>
 
-                  <div className="space-y-1.5 md:space-y-2">
-                    <label className="text-white text-[10px] md:text-xs font-bold uppercase tracking-wider">City</label>
+                  {/* City */}
+                  <div className="space-y-2">
+                    <label className="block text-secondary text-sm font-bold uppercase tracking-wide">City / Location</label>
                     <input 
                       type="text" 
-                      placeholder="Delhi"
-                      className="w-full bg-white text-secondary px-4 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl outline-none focus:ring-2 focus:ring-white/50 transition-all text-sm md:text-base"
+                      placeholder="Your city"
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F26522] focus:border-transparent transition-all text-sm"
                     />
                   </div>
 
-                  <div className="space-y-1.5 md:space-y-2">
-                    <label className="text-white text-[10px] md:text-xs font-bold uppercase tracking-wider">Project Start</label>
-                    <div className="relative">
-                      <select className="w-full bg-white text-secondary px-4 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl outline-none focus:ring-2 focus:ring-white/50 transition-all appearance-none cursor-pointer text-sm md:text-base">
-                        <option>Immediately</option>
-                        <option>In 1 Month</option>
-                        <option>In 3 Months</option>
-                        <option>In 6 Months</option>
-                      </select>
-                      <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-secondary">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                      </div>
-                    </div>
+                  {/* Project Type */}
+                  <div className="space-y-2">
+                    <label className="block text-secondary text-sm font-bold uppercase tracking-wide">Project Type</label>
+                    <select 
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F26522] focus:border-transparent transition-all text-sm appearance-none cursor-pointer bg-white"
+                    >
+                      <option value="">Select project type</option>
+                      <option>Residential Construction</option>
+                      <option>Commercial Construction</option>
+                      <option>Interior Designing</option>
+                      <option>Renovation</option>
+                      <option>Other</option>
+                    </select>
                   </div>
 
-                  <button className="w-full bg-white text-primary px-8 md:px-10 py-3.5 md:py-4 rounded-xl md:rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-slate-50 transition-colors shadow-xl text-sm md:text-base">
-                    <Send size={16} className="rotate-45 -translate-y-0.5 md:w-[18px] md:h-[18px]" />
-                    Submit
+                  {/* Project Timeline */}
+                  <div className="space-y-2">
+                    <label className="block text-secondary text-sm font-bold uppercase tracking-wide">When do you want to start?</label>
+                    <select 
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F26522] focus:border-transparent transition-all text-sm appearance-none cursor-pointer bg-white"
+                    >
+                      <option>Immediately</option>
+                      <option>In 1 Month</option>
+                      <option>In 3 Months</option>
+                      <option>In 6 Months</option>
+                      <option>Not decided yet</option>
+                    </select>
+                  </div>
+
+                  {/* Budget */}
+                  <div className="space-y-2">
+                    <label className="block text-secondary text-sm font-bold uppercase tracking-wide">Estimated Budget Range</label>
+                    <select 
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F26522] focus:border-transparent transition-all text-sm appearance-none cursor-pointer bg-white"
+                    >
+                      <option>Select budget range</option>
+                      <option>Below 20 Lakhs</option>
+                      <option>20-50 Lakhs</option>
+                      <option>50-1 Crore</option>
+                      <option>Above 1 Crore</option>
+                    </select>
+                  </div>
+
+                  {/* Message */}
+                  <div className="space-y-2">
+                    <label className="block text-secondary text-sm font-bold uppercase tracking-wide">Project Details (Optional)</label>
+                    <textarea 
+                      placeholder="Tell us more about your project..."
+                      rows={3}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F26522] focus:border-transparent transition-all text-sm resize-none"
+                    />
+                  </div>
+
+                  {/* Submit Button */}
+                  <button
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-[#F26522] to-orange-600 text-white font-bold py-4 rounded-lg flex items-center justify-center gap-2 hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200 text-base"
+                  >
+                    <Send size={18} className="rotate-45" />
+                    Get Free Consultation
                   </button>
+
+                  {/* Disclaimer */}
+                  <p className="text-xs text-gray-500 text-center">
+                    We'll never spam you. Your information is secure and confidential.
+                  </p>
                 </form>
               </div>
             </div>
