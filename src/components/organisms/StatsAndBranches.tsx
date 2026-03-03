@@ -150,24 +150,83 @@ export const StatsSection = () => {
 export const BranchesSection = () => {
   const [showAll, setShowAll] = useState(false);
 
-  const branches = [
-    { name: 'Anantapur',     count: '25+', image: 'https://picsum.photos/seed/city1/400/400' },
-    { name: 'Hindupur',      count: '18+', image: 'https://picsum.photos/seed/city2/400/400' },
-    { name: 'Puttaparthi',   count: '14+', image: 'https://picsum.photos/seed/city3/400/400' },
-    { name: 'Penukonda',     count: '22+', image: 'https://picsum.photos/seed/city4/400/400' },
-    { name: 'Kadiri',        count: '10+', image: 'https://picsum.photos/seed/city5/400/400' },
-    { name: 'Guntakal',      count: '16+', image: 'https://picsum.photos/seed/city6/400/400' },
-    { name: 'Kalyandurgam',  count: '9+',  image: 'https://picsum.photos/seed/city7/400/400' },
-    { name: 'Rayadurgam',    count: '11+', image: 'https://picsum.photos/seed/city8/400/400' },
-    { name: 'Uravakonda',    count: '8+',  image: 'https://picsum.photos/seed/city9/400/400' },
-    { name: 'Tadipatri',     count: '13+', image: 'https://picsum.photos/seed/city10/400/400' },
-    { name: 'Kurnool',       count: '65+', image: 'https://picsum.photos/seed/city11/400/400' },
-    { name: 'Nandyal',       count: '19+', image: 'https://picsum.photos/seed/city12/400/400' },
-    { name: 'Tirupati',      count: '30+', image: 'https://picsum.photos/seed/city13/400/400' },
-    { name: 'Bangalore',     count: '42+', image: 'https://picsum.photos/seed/city14/400/400' },
-    { name: 'Hyderabad',     count: '55+', image: 'https://picsum.photos/seed/city15/400/400' },
-  ];
-
+const branches = [
+  {
+    name: 'Anantapur',
+    count: '25+',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80'
+  },
+  {
+    name: 'Hindupur',
+    count: '18+',
+    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80'
+  },
+  {
+    name: 'Puttaparthi',
+    count: '14+',
+    image: 'https://images.unsplash.com/photo-1505761671935-60b3a7427bad?w=600&q=80'
+  },
+  {
+    name: 'Penukonda',
+    count: '22+',
+    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80'
+  },
+  {
+    name: 'Kadiri',
+    count: '10+',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80' 
+  },
+  {
+    name: 'Guntakal',
+    count: '16+',
+    image:  'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=600&q=80'
+  },
+  {
+    name: 'Kalyandurgam',
+    count: '9+',
+    image: 'https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=600&q=80'
+  },
+  {
+    name: 'Rayadurgam',
+    count: '11+',
+    image: 'https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=600&q=80'
+  },
+  {
+    name: 'Uravakonda',
+    count: '8+',
+    image: 'https://images.unsplash.com/photo-1494526585095-c41746248156?w=600&q=80'
+  },
+  {
+    name: 'Tadipatri',
+    count: '13+',
+    image: 'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=600&q=80'
+  },
+  {
+    name: 'Kurnool',
+    count: '65+',
+    image: 'https://images.unsplash.com/photo-1597047084897-51e81819a499?w=600&q=80'
+  },
+  {
+    name: 'Nandyal',
+    count: '19+',
+    image: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&q=80'
+  },
+  {
+    name: 'Tirupati',
+    count: '30+',
+    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80'
+  },
+  {
+    name: 'Bangalore',
+    count: '42+',
+    image: 'https://images.unsplash.com/photo-1560185007-5f0bb1866cab?w=600&q=80'
+  },
+  {
+    name: 'Hyderabad',
+    count: '55+',
+    image: 'https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=600&q=80'
+  },
+];
   const INITIAL_SHOW = 6;
   const visible = showAll ? branches : branches.slice(0, INITIAL_SHOW);
   const hiddenCount = branches.length - INITIAL_SHOW;
