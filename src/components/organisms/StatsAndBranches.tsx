@@ -4,29 +4,36 @@ import { Heading, Text } from '../atoms/Typography';
 
 export const StatsSection = () => {
   const stats = [
-    { number: '10,142+', label: 'Homes Built and handed over' },
-    { number: '10+ Cities', label: 'Operational presence' },
-    { number: '8 Months', label: 'Express execution' },
+    { number: '10,142+', label: 'Homes Built and Handed Over' },
+    { number: '10+ Cities', label: 'Operational Presence' },
+    { number: '8 Months', label: 'Express Execution' },
     { number: '10,142+', label: 'Design Plans' },
   ];
 
   return (
-    <section className="section-padding bg-[#F8F8F8]">
-           <div className="text-center mb-12 space-y-4">
-             <Heading level={2} className="text-4xl md:text-5xl">
-               Trusted by Thousands of Homeowners
-             </Heading>
-             <Text variant="lead" className="max-w-2xl mx-auto text-slate-600">
-               Shaah Infra has built quality homes and delivered dreams across multiple cities. Our track record speaks to our commitment to excellence, transparency, and timely delivery.
-             </Text>
-           </div>
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+    <section className="bg-[#F8F8F8] py-16 md:py-24 px-4 md:px-8">
+      
+      <div className="text-center mb-14 md:mb-20 space-y-5">
+        <Heading level={2} className="text-3xl md:text-5xl font-bold leading-tight">
+          Trusted by Thousands of Homeowners
+        </Heading>
+
+        <Text
+          variant="lead"
+          className="max-w-2xl mx-auto text-slate-600 text-base md:text-lg"
+        >
+          Shaah Infra has built quality homes and delivered dreams across multiple cities. 
+          Our track record speaks to our commitment to excellence, transparency, and timely delivery.
+        </Text>
+      </div>
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
         {stats.map((stat, index) => (
-          <StatCard 
-            key={index} 
+          <StatCard
+            key={index}
             number={stat.number}
             label={stat.label}
-            index={index} 
+            index={index}
           />
         ))}
       </div>

@@ -1,7 +1,7 @@
 import {  Mail, Phone, MapPin, Clock, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Heading, Text } from '../atoms/Typography';
-
+import FooterLogo from '../../assets/Logo.png'
 export const Footer = () => {
   return (
     <footer className="bg-secondary text-white pt-16 md:pt-20 pb-8">
@@ -10,7 +10,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12">
           {/* Brand Section */}
           <div className="space-y-4">
-            <Heading level={4} className="text-white">Shaah Infra</Heading>
+            <img src={FooterLogo} alt="Logo" className='h-25 w-25'/>
             <Text className="text-white/70 text-sm leading-relaxed">
               Building your dreams with quality construction and innovative design solutions. Experience excellence in every project.
             </Text>

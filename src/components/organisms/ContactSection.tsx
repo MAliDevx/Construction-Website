@@ -79,14 +79,12 @@ export const ContactSection = () => {
           ))}
         </div>
 
-        {/* Why Shaah Infra */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
           viewport={{ once: true }}
-            className="grid md:grid-cols-2 gap-12 items-center bg-linear-to-br from-primary/5 to-primary/10 rounded-3xl p-12 mb-12 border border-primary/10"
-        >
+           className="grid md:grid-cols-2 gap-12 items-center bg-linear-to-br from-primary/5 to-primary/10 rounded-3xl p-6 mb-12 border border-primary/10">
           <div className="space-y-6">
             <Heading level={3} className="text-3xl font-bold text-slate-900">
               Why Choose Shaah Infra?

@@ -23,13 +23,34 @@ interface BranchCardProps {
 }
 
 export const BranchCard = ({ image, name, count }: BranchCardProps) => (
-  <div className="flex flex-col items-center gap-4 group cursor-pointer">
-    <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:border-primary transition-all duration-300">
-      <img src={image} alt={name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" referrerPolicy="no-referrer" />
+  <div className="flex flex-col items-center gap-4 group cursor-pointer transition-transform duration-300 hover:-translate-y-2">
+    
+    <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 rounded-full overflow-hidden 
+                    border-4 border-white shadow-md 
+                    group-hover:shadow-xl 
+                    group-hover:border-primary 
+                    transition-all duration-300">
+      <img
+        src={image}
+        alt={name}
+        referrerPolicy="no-referrer"
+        className="w-full h-full object-cover 
+                   group-hover:scale-110 
+                   transition-transform duration-500"
+      />
     </div>
-    <div className="text-center">
-      <Heading level={5} className="group-hover:text-primary transition-colors">{name}</Heading>
-      <Text variant="small" className="text-primary font-bold">{count}</Text>
+
+    <div className="text-center space-y-1">
+      <Heading
+        level={5}
+        className="text-base md:text-lg font-semibold group-hover:text-primary transition-colors"
+      >
+        {name}
+      </Heading>
+
+      <Text variant="small" className="text-primary font-bold text-sm md:text-base">
+        {count} Projects
+      </Text>
     </div>
   </div>
 );
