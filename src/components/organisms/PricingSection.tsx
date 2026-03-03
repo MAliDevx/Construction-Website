@@ -384,12 +384,9 @@ export const PricingSection = ({
           transition={{ duration: 0.6 }}
           className="space-y-4"
         >
-          <div className="inline-flex items-center gap-2 bg-orange-50 border border-orange-200 rounded-full px-4 py-1.5 mb-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] animate-pulse" />
-            <span className="text-[#F26522] font-bold uppercase tracking-widest text-xs">Our Pricing Plans</span>
-          </div>
+
           <h2 className="text-4xl md:text-5xl font-black text-gray-900 leading-tight">
-            Transparent Pricing<br className="hidden md:block" /> for Every Budget
+            Transparent Pricing for Every Budget
           </h2>
           <p className="text-base text-gray-500 max-w-xl mx-auto leading-relaxed">
             All-inclusive packages with zero hidden charges. Choose what fits your vision and budget.

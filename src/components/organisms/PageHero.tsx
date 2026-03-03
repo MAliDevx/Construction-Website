@@ -24,8 +24,7 @@ export const PageHero = ({
   imageSrc,
   imageAlt = "Hero background",
   eyebrow,
-  overlayOpacity = 0.52,
-  /** default to cover for a full-bleed banner */
+  overlayOpacity = 0.02,
   imageFit = "cover",
   children,
   minHeight = "60vh",
@@ -53,10 +52,10 @@ export const PageHero = ({
         />
       </motion.div>
 
-      <div
-        className="absolute inset-0 z-[1]"
-       
-      />
+ <div
+  className="absolute inset-0 z-[1] bg-black"
+  style={{ opacity: overlayOpacity }}
+/>
 
       <div
         className={`relative z-10 w-full max-w-4xl mx-auto px-6 md:px-12 py-16 md:py-24 ${

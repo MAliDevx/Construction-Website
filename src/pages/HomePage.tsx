@@ -25,7 +25,7 @@ From Foundation to Finishing — We Build It All"
            imageSrc={AboutUs}
            imageAlt="About Us Hero"
            align='center'
-           overlayOpacity={.2}
+           overlayOpacity={.49}
            imageFit="cover"  
          />
         <StatsSection />

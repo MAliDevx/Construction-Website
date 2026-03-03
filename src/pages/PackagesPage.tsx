@@ -41,15 +41,7 @@ const {openBookingModal} = useBooking()
           transition={{ duration: 0.6 }}
           className="flex-shrink-0 lg:w-[340px]"
         >
-          <div
-            className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-5"
-            style={{ backgroundColor: BRAND_LIGHT, border: `1px solid ${BRAND_BORDER}` }}
-          >
-            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: BRAND }} />
-            <span className="font-bold uppercase tracking-[0.18em] text-[10px]" style={{ color: BRAND }}>
-              Plan Your Build
-            </span>
-          </div>
+  
 
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight mb-1">
             Define Your
