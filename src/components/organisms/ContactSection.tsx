@@ -2,7 +2,8 @@ import { Heading, Text } from '../atoms/Typography';
 import { Button } from '../atoms/Button';
 import { useBooking } from '../../context/BookingContext';
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, ArrowRight, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowRight, MessageCircle, PhoneCall } from 'lucide-react';
+import { TbBrandWhatsappFilled } from 'react-icons/tb';
 
 const ContactCard = ({ icon: Icon, title, value, delay }: { icon: any; title: string; value: string; delay: number }) => (
   <motion.div
@@ -55,7 +56,6 @@ export const ContactSection = () => {
   return (
        <section className="section-padding bg-linear-to-b from-slate-50 to-white">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -72,12 +72,7 @@ export const ContactSection = () => {
           </Text>
         </motion.div>
 
-        {/* Contact Cards Grid */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
-          {contactCards.map((card, idx) => (
-              <ContactCard key={idx} {...card} />
-          ))}
-        </div>
+
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -89,13 +84,34 @@ export const ContactSection = () => {
             <Heading level={3} className="text-3xl font-bold text-slate-900">
               Why Choose Shaah Infra?
             </Heading>
-            
+
+
             <div className="space-y-4">
               {[
-                { title: 'Transparent Pricing', desc: 'Clear, upfront costs with no hidden charges' },
-                { title: 'Free Consultation', desc: 'Expert guidance at no cost to you' },
-                { title: 'Expert Team', desc: 'Experienced professionals committed to quality' },
-                { title: 'On-Time Delivery', desc: 'We respect your timeline and complete projects as promised' }
+                  { 
+    title: 'Experienced Engineering Team', 
+    desc: 'Our certified engineers and architects ensure every project is structurally sound and aesthetically superior.' 
+  },
+  { 
+    title: 'Quality Materials', 
+    desc: 'We use premium-grade construction materials to guarantee durability, safety, and long-lasting beauty.' 
+  },
+  { 
+    title: 'Transparent Budget Planning', 
+    desc: 'Receive a clear, upfront cost estimate with no hidden charges, ensuring complete financial transparency.' 
+  },
+  { 
+    title: 'Modern Designs', 
+    desc: 'Our innovative architectural and interior designs blend style, functionality, and your personal taste.' 
+  },
+  { 
+    title: 'Timely Project Delivery', 
+    desc: 'We respect your timeline and consistently deliver projects on schedule, without compromising quality.' 
+  },
+  { 
+    title: 'End-to-End Execution', 
+    desc: 'From planning to handover, we manage every step of construction to provide a seamless experience.' 
+  },
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -150,18 +166,31 @@ export const ContactSection = () => {
                 Or reach out directly:
               </Text>
               <div className="flex flex-col gap-2">
-                <a 
-                  href="tel:+919705779992"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-blue-50 text-blue-600 hover:bg-blue-100 font-semibold transition-colors"
-                >
-                  <Phone size={18} /> Call Now
-                </a>
-                <a 
-                  href="https://wa.me/919705779992"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-green-50 text-green-600 hover:bg-green-100 font-semibold transition-colors"
-                >
-                  <MessageCircle size={18} /> WhatsApp
-                </a>
+            <a
+      href="https://wa.me/919705779992"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="fixed bottom-8 right-8 w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform z-40 group"
+      title="Chat with us on WhatsApp"
+    >
+      <TbBrandWhatsappFilled size={32} fill="currentColor" />
+      <span className="absolute bottom-20 right-0 bg-gray-900 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+        Quick Chat
+      </span>
+    </a>
+
+    {/* Call */}
+    <a
+      href="tel:+919705779992"
+      className="fixed bottom-28 right-8 w-14 h-14 text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform z-40 group"
+      style={{ backgroundColor: "#fe6700" }}
+      title="Call us"
+    >
+      <PhoneCall size={24} />
+      <span className="absolute bottom-16 right-0 bg-gray-900 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+        Call Now
+      </span>
+    </a>
               </div>
             </div>
           </motion.div>

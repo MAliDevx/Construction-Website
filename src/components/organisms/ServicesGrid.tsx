@@ -1,33 +1,46 @@
-import { useNavigate } from 'react-router-dom';
 import { Heading, Text } from '../atoms/Typography';
 import { ServiceCard } from '../molecules/Cards';
 import ConstructionService from '../../assets/Services/ServiceMissionPic.png';
 import InteriorDesigning from '../../assets/Services/InteriorDesigningServicesAbout.png';
 import ProjectPlanning from '../../assets/Services/ProjectPlaningAbout.png';
 import ProjectAnalysis from '../../assets/Services/ProjectAnalysisAbout.png';
+
 export const ServicesGrid = () => {
   const services = [
     {
-      title: 'Construction',
-      description: 'We provide reliable and high-quality construction services for residential, commercial, and industrial projects. Our experienced team manages every stage of the construction process, from planning and foundation to final completion. We focus on using quality materials, modern techniques, and strict safety standards to deliver strong structures.',
+      title: 'Residential Construction',
+      description: `• Individual Houses
+• Duplex & Villas
+• Apartment Construction
+• Structural & Civil Works`,
       image: ConstructionService,
       link: '/construction'
     },
     {
-      title: 'Interior Designing',
-      description: 'Our interior designing services are focused on creating modern, stylish, and functional spaces for residential and commercial projects. We carefully plan every detail, from layout and the materials to lighting and décor, ensuring a perfect balance of beauty, comfort, and usability.',
-      image: InteriorDesigning,
-      link: '/interior-designing'
-    },
-    {
-      title: 'Project Planning',
-      description: 'We provide detailed and strategic project planning to ensure smooth and successful construction. Our team carefully plans timelines, resources, budgets, and workflows to minimize risks and maximize efficiency. We ensure every phase is organized and aligned to deliver projects on time and within budget.',
+      title: 'Commercial Construction',
+      description: `• Office Buildings
+• Shops & Complexes
+• Warehouses
+• Institutional Buildings`,
       image: ProjectPlanning,
       link: '/project-planning'
     },
     {
-      title: 'Project Analysis',
-      description: 'We conduct detailed project analysis to evaluate feasibility, requirements, costs, and potential risks before construction begins. Our team ensures proper planning and informed decision-making, helping to improve efficiency, reduce risks, and ensure successful project execution.',
+      title: 'Interior Designing',
+      description: `• Modular Kitchens
+• False Ceiling
+• Wardrobes
+• TV Units
+• Office Interiors
+• Complete Turnkey Interiors`,
+      image: InteriorDesigning,
+      link: '/interior-designing'
+    },
+    {
+      title: 'Renovation & Remodeling',
+      description: `• House Renovation
+• Interior Upgrades
+• Structural Modifications`,
       image: ProjectAnalysis,
       link: '/project-analysis'
     }
@@ -36,13 +49,13 @@ export const ServicesGrid = () => {
   return (
     <section className="section-padding bg-white">
       <div className="text-center mb-16 space-y-4">
-        <Heading level={2} className="text-4xl md:text-5xl">Our Expert Solutions</Heading>
+        <Heading level={2} className="text-4xl md:text-5xl">Our Services</Heading>
         <Text variant="muted" className="max-w-2xl mx-auto">
-          We offer a full range of construction services designed to deliver quality, efficiency, and reliability.
+          We provide expert construction and design solutions across residential, commercial, and renovation projects.
         </Text>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 max-w-6xl mx-auto">
         {services.map((service, index) => (
           <ServiceCard
             key={index}
@@ -50,7 +63,7 @@ export const ServicesGrid = () => {
             title={service.title}
             description={service.description}
             image={service.image}
-            link={service.link}   // ← pass link down
+            link={service.link}
           />
         ))}
       </div>

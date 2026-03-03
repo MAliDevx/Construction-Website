@@ -9,6 +9,8 @@ interface PageHeroProps {
   imageAlt?: string;
   eyebrow?: string;
   overlayOpacity?: number;
+
+  imageFit?: "cover" | "contain";
   children?: ReactNode;
   minHeight?: string;
   align?: "left" | "center";
@@ -23,11 +25,14 @@ export const PageHero = ({
   imageAlt = "Hero background",
   eyebrow,
   overlayOpacity = 0.52,
+  /** default to cover for a full-bleed banner */
+  imageFit = "cover",
   children,
   minHeight = "60vh",
   align = "center",
 }: PageHeroProps) => {
   const isCenter = align === "center";
+  const fitClass = imageFit === "contain" ? "object-contain" : "object-cover";
 
   return (
     <section
@@ -43,7 +48,7 @@ export const PageHero = ({
         <img
           src={imageSrc}
           alt={imageAlt}
-          className="w-full h-full object-contain object-center"
+          className={`w-full h-full ${fitClass} object-center`}
           referrerPolicy="no-referrer"
         />
       </motion.div>

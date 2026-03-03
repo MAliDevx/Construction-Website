@@ -1,17 +1,50 @@
-import { MessageSquare, FileText, PenTool, Activity, Home } from 'lucide-react';
+import { MessageSquare, FileText, PenTool, Activity, Home,Key } from 'lucide-react';
 import { Heading, Text } from '../atoms/Typography';
 import { ProcessStep } from '../molecules/Cards';
-import { act } from 'react';
 
 
 export const ProcessSection = () => {
-  const steps = [
-    { number: '01', title: 'Connect with Us', description: 'Share your basic details through a quick form. Our team contacts you within 20 minutes for a free technical consultation.', icon: <MessageSquare /> },
-    { number: '02', title: 'Define Your Requirements', description: 'Discuss your plot details, budget, and timeline with our experts. We craft a clear project plan tailored to your goals.', icon: <FileText />, active: true },
-    { number: '03', title: 'Approve The Designs', description: 'Review floor plans, drawings, and 3D views. Work closely with our architects until every detail is finalized.', icon: <PenTool /> },
-    { number: '04', title: 'Track Live Progress', description: 'Track construction in real time via our app with daily photos, quality reports, and payment updates.', icon: <Activity /> },
-    { number: '05', title: 'Move In Forward', description: 'Take possession of your fully completed home. Move in with confidence, backed by a 10year warranty.', icon: <Home />, active: true },
-  ];
+const steps = [
+  {
+    number: '01',
+    title: 'Consultation & Planning',
+    description: 'Share your project details via our form. Our team will contact you within 20 minutes for a free technical consultation to understand your needs.',
+    icon: <MessageSquare />,
+  },
+  {
+    number: '02',
+    title: 'Design & Estimation',
+    description: 'Our architects and engineers discuss your plot, budget, and vision. We provide detailed 2D/3D designs and a transparent cost estimation.',
+    icon: <FileText />,
+    active: true,
+  },
+  {
+    number: '03',
+    title: 'Approval & Agreement',
+    description: 'Review floor plans, elevations, and 3D renders. Finalize the design and sign a clear agreement outlining timelines, costs, and deliverables.',
+    icon: <PenTool />,
+  },
+  {
+    number: '04',
+    title: 'Construction Execution',
+    description: 'Construction begins with quality-controlled materials and skilled labor. Track progress through our app with daily photos, reports, and payment updates.',
+    icon: <Activity />,
+    active: true,
+  },
+  {
+    number: '05',
+    title: 'Interior Finishing',
+    description: 'Our team completes interiors with premium fittings, flooring, painting, and fixtures, ensuring your home is ready for living with attention to detail.',
+    icon: <Home />,
+  },
+  {
+    number: '06',
+    title: 'Handover & Support',
+    description: 'Receive your fully completed home along with a 10-year structural warranty. Our team provides post-handover support for smooth move-in and any queries.',
+    icon: <Key />,
+    active: true,
+  },
+];
 
   return (
 <section className="section-padding">
@@ -20,9 +53,8 @@ export const ProcessSection = () => {
     <Text variant="muted">Plan. Build. Track. Move In</Text>
   </div>
 
-  {/* Top 3 Cards */}
   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-    {steps.slice(0, 3).map((step, index) => (
+    {steps.slice(0, 6).map((step, index) => (
       <ProcessStep
         key={index}
         number={step.number}
@@ -34,8 +66,7 @@ export const ProcessSection = () => {
     ))}
   </div>
 
-  {/* Bottom 2 Cards Centered */}
-  <div className="flex justify-center gap-8 mt-8 flex-wrap">
+  {/* <div className="flex justify-center gap-8 mt-8 flex-wrap">
     {steps.slice(3, 5).map((step, index) => (
       <div className="w-full md:w-[45%] lg:w-[30%]">
         <ProcessStep
@@ -48,7 +79,7 @@ export const ProcessSection = () => {
         />
       </div>
     ))}
-  </div>
+  </div> */}
 </section>
   );
 };

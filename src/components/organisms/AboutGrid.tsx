@@ -6,7 +6,7 @@ export const AboutGrid = () => {
       <div className="text-center mb-6">
         <Heading
           level={2}
-          className="text-[#FF7A00] text-4xl md:text-5xl font-bold pt-26 pb-5"
+          className=" text-4xl md:text-5xl font-bold pt-26 pb-5"
         >
           Built for Contractors Who Want Scale
         </Heading>
