@@ -90,7 +90,7 @@ export const AboutPage = () => {
                     <Building2 size={18} style={{ color: '#F26522' }} />
                   </div>
                   <div>
-                    <p className="text-gray-900 font-black text-sm leading-none">10,142+</p>
+                    <p className="text-gray-900 font-black text-sm leading-none">100+</p>
                     <p className="text-gray-400 text-[11px] mt-0.5 font-medium">Homes Delivered</p>
                   </div>
                 </motion.div>
@@ -199,10 +199,9 @@ export const AboutPage = () => {
         Quick Chat
       </span>
     </a>
-
     {/* Call */}
     <a
-      href="tel:+919705779992"
+      href="tel:+919705779991"
       className="fixed bottom-28 right-8 w-14 h-14 text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform z-40 group"
       style={{ backgroundColor: "#fe6700" }}
       title="Call us"

@@ -68,7 +68,7 @@ export const ContactSection = () => {
             Let's Bring Your Vision to Life
           </Heading>
           <Text variant="lead" className="max-w-3xl mx-auto text-slate-600 text-lg">
-            Ready to start your construction project? Connect with Ali Khan and our expert team at Shaah Infra. We're committed to understanding your needs and delivering exceptional results.
+            Ready to start your construction project? Connect with Mr. Ali Khan and our expert team at Shaah Infra. We're committed to understanding your needs and delivering exceptional results.
           </Text>
         </motion.div>
 
@@ -146,7 +146,7 @@ export const ContactSection = () => {
                 Schedule Your Free Consultation
               </Heading>
               <Text className="text-slate-600">
-                Ali Khan and the Shaah Infra team are ready to transform your project vision into reality.
+                Mr. Ali Khan and the Shaah Infra team are ready to transform your project vision into reality.
               </Text>
             </div>
 
@@ -181,7 +181,7 @@ export const ContactSection = () => {
 
     {/* Call */}
     <a
-      href="tel:+919705779992"
+      href="tel:+919705779991"
       className="fixed bottom-28 right-8 w-14 h-14 text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform z-40 group"
       style={{ backgroundColor: "#fe6700" }}
       title="Call us"

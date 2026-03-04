@@ -2,15 +2,29 @@ import { useState } from 'react';
 import { BranchCard } from '../molecules/Inputs';
 import { Heading, Text } from '../atoms/Typography';
 import { motion,AnimatePresence } from 'framer-motion';
-import { Check, Building2, Award, Clock, Users,MapPin, ChevronDown, ChevronUp } from 'lucide-react';
-
+import { Check, Building2, Award, Clock, Users, ChevronDown, ChevronUp } from 'lucide-react';
+import Anantapur from '../../assets/Cities/Anantapur.png'
+import Bangalore from '../../assets/Cities/Bangalore.png'
+import Guntakal from '../../assets/Cities/Guntakal.png'
+import Hindupur from '../../assets/Cities/Hindupur.png'
+import Hyderabad from '../../assets/Cities/Hyderabad.png'
+import Kadiri from '../../assets/Cities/Kadiri.png'
+import Kalyandurgam from '../../assets/Cities/Kalyandurgam.png'
+import Kurnool from '../../assets/Cities/Kurnool.png'
+import Nandyal from '../../assets/Cities/Nandyal.png'
+import Penukonda from '../../assets/Cities/Penukonda.png'
+import Puttaparthi from '../../assets/Cities/Puttaparthi.png'
+import Rayadurgam from '../../assets/Cities/Rayadurgam.png'
+import Tadipatri from '../../assets/Cities/Tadipatri.png'
+import Tirupati from '../../assets/Cities/Tirupati.png'
+import Uravakonda from '../../assets/Cities/Uravakonda.png'
 
 export const StatsSection = () => {
   const stats = [
-    { number: '10,142+', label: 'Homes Built and Handed Over', icon: Building2 },
+    { number: '100+', label: 'Homes Built and Handed Over', icon: Building2 },
     { number: '10+ Cities', label: 'Operational Presence', icon: Award },
     { number: '8 Months', label: 'Express Execution', icon: Clock },
-    { number: '10,142+', label: 'Design Plans', icon: Users },
+    { number: '100+', label: 'Design Plans', icon: Users },
   ];
 
   const missions = [
@@ -154,77 +168,77 @@ const branches = [
   {
     name: 'Anantapur',
     count: '25+',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80'
+    image: Anantapur,
   },
   {
     name: 'Hindupur',
     count: '18+',
-    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80'
+    image: Hindupur
   },
   {
     name: 'Puttaparthi',
     count: '14+',
-    image: 'https://images.unsplash.com/photo-1505761671935-60b3a7427bad?w=600&q=80'
+    image: Puttaparthi
   },
   {
     name: 'Penukonda',
     count: '22+',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80'
+    image: Penukonda
   },
   {
     name: 'Kadiri',
     count: '10+',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80' 
+    image: Kadiri
   },
   {
     name: 'Guntakal',
     count: '16+',
-    image:  'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=600&q=80'
+    image:  Guntakal
   },
   {
     name: 'Kalyandurgam',
     count: '9+',
-    image: 'https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=600&q=80'
+    image: Kalyandurgam
   },
   {
     name: 'Rayadurgam',
     count: '11+',
-    image: 'https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=600&q=80'
+    image: Rayadurgam
   },
   {
     name: 'Uravakonda',
     count: '8+',
-    image: 'https://images.unsplash.com/photo-1494526585095-c41746248156?w=600&q=80'
+    image: Uravakonda
   },
   {
     name: 'Tadipatri',
     count: '13+',
-    image: 'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=600&q=80'
+    image: Tadipatri
   },
   {
     name: 'Kurnool',
     count: '65+',
-    image: 'https://images.unsplash.com/photo-1597047084897-51e81819a499?w=600&q=80'
+    image: Kurnool
   },
   {
     name: 'Nandyal',
     count: '19+',
-    image: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&q=80'
+    image: Nandyal
   },
   {
     name: 'Tirupati',
     count: '30+',
-    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80'
+    image: Tirupati
   },
   {
     name: 'Bangalore',
     count: '42+',
-    image: 'https://images.unsplash.com/photo-1560185007-5f0bb1866cab?w=600&q=80'
+    image: Bangalore
   },
   {
     name: 'Hyderabad',
     count: '55+',
-    image: 'https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=600&q=80'
+    image: Hyderabad
   },
 ];
   const INITIAL_SHOW = 6;

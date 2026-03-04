@@ -2,6 +2,7 @@ import { X, Mail, Phone, MapPin, Send, CheckCircle, Clock, Users, Sparkles } fro
 import { motion, AnimatePresence } from 'motion/react';
 import { Heading, Text } from '../atoms/Typography';
 import { useState } from 'react';
+import { TbBrandWhatsappFilled } from 'react-icons/tb';
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -266,7 +267,8 @@ export const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
                     {/* Contact info */}
                     <div style={{ position: 'relative', zIndex: 1, marginTop: '32px', paddingTop: '24px', borderTop: '1px solid rgba(255,255,255,0.2)' }}>
                       {[
-                        { icon: <Phone size={16} />, text: '+91 9705779992' },
+                        { icon: <Phone size={16} />, text: '+91 9705779991' },
+                        { icon: <TbBrandWhatsappFilled size={16} />, text: '+91 9705779992' },
                         { icon: <Mail size={16} />, text: 'info@shaahinfra.com' },
                         { icon: <MapPin size={16} />, text: 'Kalyandurgam Road, Anantapur, AP 515001' },
                       ].map(item => (

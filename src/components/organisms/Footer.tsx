@@ -2,6 +2,7 @@ import {  Mail, Phone, MapPin, Clock, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Heading, Text } from '../atoms/Typography';
 import FooterLogo from '../../assets/Logo.png'
+import { TbBrandWhatsappFilled } from 'react-icons/tb';
 export const Footer = () => {
   return (
     <footer className="bg-secondary text-white pt-16 md:pt-20 pb-8">
@@ -51,6 +52,13 @@ export const Footer = () => {
                 <Phone className="text-primary shrink-0 mt-1" size={18} />
                 <div>
                   <p className="text-white/50 text-xs uppercase tracking-wide">Phone</p>
+                  <p className="text-white/80 text-sm font-medium">+91 9705779991</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <TbBrandWhatsappFilled className="text-primary shrink-0 mt-1" size={18} />
+                <div>
+                  <p className="text-white/50 text-xs uppercase tracking-wide">WhatsApp</p>
                   <p className="text-white/80 text-sm font-medium">+91 9705779992</p>
                 </div>
               </div>
