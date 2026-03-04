@@ -7,6 +7,7 @@ import { TestimonialsContactAndFooterTemplate } from '../components/templates/Te
 import { PageHero } from '../components/organisms/PageHero';
 import AboutUs from '../assets/Home//HomeBanner.png';
 import { TbBrandWhatsappFilled } from "react-icons/tb";
+import ReviewsSection from '../components/organisms/Reviews';
 
 export const HomePage = () => {
   return (
@@ -32,8 +33,8 @@ From Foundation to Finishing — We Build It All"
         <BranchesSection />
         <ProcessSection />
         <ServicesSection />
+      <ReviewsSection Button={true}/>
         <TestimonialsContactAndFooterTemplate />
-      
       </main>
 
       <a
