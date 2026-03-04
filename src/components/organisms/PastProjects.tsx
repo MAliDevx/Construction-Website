@@ -151,7 +151,7 @@ export const PastProjects = () => {
   const next = () => setActiveIndex((i) => (i !== null ? (i + 1) % projects.length : 0));
 
   return (
-    <section className="bg-white py-20">
+    <section className="">
       <div className="section-padding">
 
         {/* Header */}
@@ -162,9 +162,6 @@ export const PastProjects = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12 space-y-4"
         >
-          <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-orange-400 bg-orange-50 px-4 py-1.5 rounded-full">
-            Portfolio
-          </span>
           <Heading level={2} className="text-4xl md:text-5xl">
             Our Past Projects
           </Heading>
@@ -212,7 +209,6 @@ export const PastProjects = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-center mt-12"
         >
-          <p className="text-gray-400 text-sm mb-4">Want to see your home in this gallery?</p>
           <Link to={'/packages'} className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold text-sm px-7 py-3 rounded-full transition-colors duration-200 shadow-md shadow-orange-100">
             Start Your Project
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
