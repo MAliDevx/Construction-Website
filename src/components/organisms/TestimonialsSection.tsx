@@ -9,7 +9,7 @@ const testimonials = [
     location: 'Anantapur',
     date: '18 Feb 2026',
     text: 'Shaah Infra delivered our dream home ahead of schedule. The quality of materials, transparency in billing, and the professionalism of the entire team was truly outstanding. Would recommend to anyone looking to build in Anantapur.',
-    avatar: 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=300',
+    avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Rahul%20Sharma&backgroundColor=f97316',
     rating: 5,
   },
   {
@@ -17,43 +17,42 @@ const testimonials = [
     location: 'Bangalore',
     date: '12 Dec 2025',
     text: 'From the very first consultation to handing over the keys, the entire journey with Shaah Infra was smooth and stress-free. Their team handled everything with great care and kept us updated at every step.',
-    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300',
+    avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Priya%20Reddy&backgroundColor=2563eb',
     rating: 5,
   },
   {
     name: 'Amit Verma',
     location: 'Hyderabad',
     date: '02 Oct 2025',
-    text: 'Highly professional and trustworthy builders. Communication was always clear, timelines were respected, and the finishing quality exceeded our expectations. The modular kitchen and false ceiling work is top-notch.',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300',
+    text: 'Highly professional and trustworthy builders. Communication was always clear, timelines were respected, and the finishing quality exceeded our expectations.',
+    avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Amit%20Verma&backgroundColor=16a34a',
     rating: 5,
   },
   {
     name: 'Meena Krishnamurthy',
     location: 'Anantapur',
     date: '15 Aug 2025',
-    text: 'We were nervous about building our first home, but Shaah Infra made it a joyful experience. They were patient with our questions, suggested great design ideas, and completed the work within budget. Very happy!',
-    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300',
+    text: 'We were nervous about building our first home, but Shaah Infra made it a joyful experience. They were patient with our questions and completed the work within budget.',
+    avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Meena%20Krishnamurthy&backgroundColor=db2777',
     rating: 5,
   },
   {
     name: 'Suresh Babu',
     location: 'Kurnool',
     date: '29 Jun 2025',
-    text: 'I have worked with several contractors over the years and Shaah Infra stands apart. No hidden costs, no delays, and the structural quality is solid. My family is living comfortably in our new home thanks to them.',
-    avatar: 'https://images.unsplash.com/photo-1552058544-f2b08422138a?w=300',
+    text: 'No hidden costs, no delays, and the structural quality is solid. My family is living comfortably in our new home thanks to them.',
+    avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Suresh%20Babu&backgroundColor=7c3aed',
     rating: 5,
   },
   {
     name: 'Lakshmi Narayanan',
     location: 'Tirupati',
     date: '10 Apr 2025',
-    text: 'Exceptional service from start to finish. The Premium package we chose was worth every rupee — beautiful granite flooring, fully modular kitchen, and the elevation design turned out better than we imagined.',
-    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300',
+    text: 'Exceptional service from start to finish. The Premium package we chose was worth every rupee.',
+    avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Lakshmi%20Narayanan&backgroundColor=ea580c',
     rating: 5,
   },
 ];
-
 export const TestimonialsSection = () => {
   const [current, setCurrent] = useState(0);
   const [isMobile, setIsMobile] = useState(false);

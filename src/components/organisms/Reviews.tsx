@@ -46,7 +46,7 @@ const testimonials: Testimonial[] = [
     rating: 5,
     quote: "We looked at so many apartments, but nothing felt like home until this.",
     plan: "Standard",
-    videoUrl: "https://www.w3schools.com/embed/Jj5IbJX9jN4",
+    videoUrl: "https://youtube.com/shorts/Jj5IbJX9jN4?si=tUR9Qv13mdnwzEZt",
     thumbnail: "https://img.youtube.com/vi/Jj5IbJX9jN4/hqdefault.jpg",
   },
   {
@@ -185,6 +185,13 @@ function VideoModal({
 function getYoutubeEmbedUrl(url: string) {
   if (url.includes("embed")) return url;
 
+  // Handle YouTube Shorts: https://youtube.com/shorts/VIDEO_ID
+  if (url.includes("/shorts/")) {
+    const videoId = url.split("/shorts/")[1]?.split("?")[0];
+    return `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+  }
+
+  // Handle regular YouTube URLs
   const videoId =
     url.split("v=")[1]?.split("&")[0] ||
     url.split("youtu.be/")[1]?.split("?")[0];
@@ -193,23 +200,23 @@ function getYoutubeEmbedUrl(url: string) {
 }
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
       onClick={handleBackdropClick}
       style={{ animation: "fadeIn 0.2s ease" }}
     >
       <div
-        className="relative w-full max-w-3xl mx-4 rounded-2xl overflow-hidden shadow-2xl"
+        className="relative w-full max-w-3xl rounded-2xl overflow-hidden shadow-2xl"
         style={{ animation: "scaleIn 0.25s cubic-bezier(0.34,1.56,0.64,1)" }}
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-5 py-3 bg-gray-900">
-          <div>
-            <p className="text-white font-semibold text-sm">{testimonial.name}</p>
+        <div className="flex items-center justify-between px-4 sm:px-5 py-2 sm:py-3 bg-gray-900 gap-3">
+          <div className="min-w-0 flex-1">
+            <p className="text-white font-semibold text-xs sm:text-sm truncate">{testimonial.name}</p>
             <p className="text-gray-400 text-xs">{testimonial.crn} · {testimonial.year}</p>
           </div>
           <button
             onClick={onClose}
-            className="flex items-center justify-center w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white"
+            className="flex items-center justify-center w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white flex-shrink-0"
             aria-label="Close video"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -219,10 +226,10 @@ function getYoutubeEmbedUrl(url: string) {
         </div>
 
         {/* Video */}
-{/* Video */}
-<div className="bg-black aspect-video">
+<div className="bg-black w-full aspect-video">
   {testimonial.videoUrl.includes("youtube.com") ||
-  testimonial.videoUrl.includes("youtu.be") ? (
+  testimonial.videoUrl.includes("youtu.be") ||
+  testimonial.videoUrl.includes("youtube.com/shorts") ? (
     
     <iframe
       src={getYoutubeEmbedUrl(testimonial.videoUrl)}
@@ -255,8 +262,8 @@ function getYoutubeEmbedUrl(url: string) {
 </div>
 
         {/* Footer quote */}
-        <div className="bg-gray-900 px-5 py-3 border-t border-white/10">
-          <p className="text-gray-300 text-sm italic">"{testimonial.quote}"</p>
+        <div className="bg-gray-900 px-4 sm:px-5 py-2 sm:py-3 border-t border-white/10">
+          <p className="text-gray-300 text-xs sm:text-sm italic line-clamp-2">"{testimonial.quote}"</p>
         </div>
       </div>
 
@@ -309,19 +316,19 @@ function TestimonialCard({
       </div>
 
       {/* Content */}
-      <div className="p-4 flex flex-col flex-1">
+      <div className="p-3 sm:p-4 flex flex-col flex-1">
         <div className="flex items-start justify-between gap-2 mb-1">
-          <p className="font-bold text-gray-900 text-sm leading-tight">{testimonial.name}</p>
+          <p className="font-bold text-gray-900 text-xs sm:text-sm leading-tight">{testimonial.name}</p>
           <span className="text-xs text-gray-400 shrink-0 mt-0.5">{testimonial.year}</span>
         </div>
         <p className="text-xs text-gray-400 mb-2">{testimonial.crn}</p>
         <StarRating rating={testimonial.rating} />
-        <p className="mt-3 text-sm text-gray-600 leading-relaxed flex-1 line-clamp-3">
+        <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-gray-600 leading-relaxed flex-1 line-clamp-3">
           "{testimonial.quote}"
         </p>
         <button
           onClick={onPlay}
-          className={`mt-4 text-xs font-medium ${colors.text} hover:underline text-left transition-colors`}
+          className={`mt-3 sm:mt-4 text-xs font-medium ${colors.text} hover:underline text-left transition-colors`}
         >
           Watch story →
         </button>
@@ -332,7 +339,7 @@ function TestimonialCard({
 
 const CARDS_PER_VIEW = 3;
 interface ReviewsSectionProps {
-  Button: boolean;
+  Button?: boolean;
 }
 export default function ReviewsSection({Button = false}:ReviewsSectionProps) {
   const [activePlan, setActivePlan] = useState<Plan | "All">("All");
@@ -363,14 +370,14 @@ export default function ReviewsSection({Button = false}:ReviewsSectionProps) {
   ];
 
   return (
-    <section className="bg-gray-50 py-14 px-4 font-sans">
+    <section className="bg-gray-50 py-12 sm:py-14 px-4 sm:px-6 md:px-8 font-sans">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <p className="text-xs font-semibold tracking-widest text-gray-400 uppercase mb-2">
             Real Stories
           </p>
-          <h2 className="text-3xl font-bold text-gray-900 mb-1">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">
             Homeowner Testimonials
           </h2>
           <p className="text-gray-500 text-sm">
@@ -378,7 +385,7 @@ export default function ReviewsSection({Button = false}:ReviewsSectionProps) {
           </p>
         </div>
 
-        {/* Plan filter tabs */}
+      {/* Plan filter tabs */}
         <div className="flex flex-wrap gap-2 mb-8">
           {(["All", ...PLANS] as (Plan | "All")[]).map((plan) => {
             const isActive = activePlan === plan;
@@ -388,7 +395,7 @@ export default function ReviewsSection({Button = false}:ReviewsSectionProps) {
               <button
                 key={plan}
                 onClick={() => handlePlanChange(plan)}
-                className={`px-4 py-2 rounded-full text-sm font-medium border transition-all duration-200 ${
+                className={`px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium border transition-all duration-200 ${
                   isActive
                     ? plan === "All"
                       ? "bg-gray-900 text-white border-gray-900 shadow-md"
@@ -405,7 +412,7 @@ export default function ReviewsSection({Button = false}:ReviewsSectionProps) {
         {/* Slider */}
         <div className="relative">
           {/* Cards grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 min-h-[420px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 min-h-[420px] auto-rows-max">
             {paddedVisible.map((testimonial, idx) =>
               testimonial ? (
                 <TestimonialCard
@@ -420,7 +427,7 @@ export default function ReviewsSection({Button = false}:ReviewsSectionProps) {
           </div>
 
           {/* Navigation */}
-          <div className="flex items-center justify-between mt-8">
+          <div className="flex flex-col sm:flex-row items-center justify-between mt-6 sm:mt-8 gap-4">
             {/* Dots */}
             <div className="flex gap-1.5">
               {filtered.length > CARDS_PER_VIEW &&
@@ -464,14 +471,14 @@ export default function ReviewsSection({Button = false}:ReviewsSectionProps) {
           </div>
 
           {/* Count */}
-          <p className="mt-3 text-xs text-gray-400 text-right">
+          <p className="mt-3 sm:mt-4 text-xs text-gray-400 text-right">
             Showing {Math.min(currentIndex + CARDS_PER_VIEW, filtered.length)} of {filtered.length} reviews
           </p>
         </div>
 
         {/* CTA */}
-        { Button && (<div className="text-center mt-10">
-          <button className="px-6 py-2.5 rounded-full border-2 border-gray-900 text-gray-900 text-sm font-semibold hover:bg-[#f26522] hover:border-[#f26522] hover:text-white transition-all duration-200">
+        { Button && (<div className="text-center mt-8 sm:mt-10">
+          <button className="px-6 py-2.5 rounded-full border-2 border-gray-900 text-gray-900 text-sm font-semibold hover:bg-[#f26522] hover:border-[#f26522] hover:text-white transition-all duration-200 w-full sm:w-auto">
             View more reviews
           </button>
         </div>

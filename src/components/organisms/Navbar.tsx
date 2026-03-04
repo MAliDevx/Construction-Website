@@ -14,6 +14,7 @@ export const Navbar = () => {
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
     { name: 'Packages', href: '/packages' },
+    { name: 'Reviews', href: '/reviews' },
   ];
 
   // 🔒 Lock body scroll when menu open
