@@ -8,6 +8,62 @@ import { PageHero } from '../components/organisms/PageHero';
 import AboutUs from '../assets/Home//HomeBanner.png';
 import { TbBrandWhatsappFilled } from "react-icons/tb";
 import ReviewsSection from '../components/organisms/Reviews';
+import { useRef, useState, useEffect } from 'react';
+import { Heading,Text } from '../components/atoms/Typography';
+
+function ConstructionVideoSection() {
+  const [play, setPlay] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setPlay(true);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
+  const src = play
+    ? "https://www.youtube.com/embed/Jj5IbJX9jN4?autoplay=1&rel=0"
+    : "https://www.youtube.com/embed/Jj5IbJX9jN4?autoplay=0&rel=0";
+
+  return (
+    <section ref={containerRef} className="pb-6 md:px-8">
+      <div className="max-w-5xl mx-auto">
+         
+                 <div className=' pb-12 text-center'>
+        <Heading level={2} > Watch Our Construction Journey</Heading>
+              <Text variant="muted">Full process in video </Text>
+          
+         </div>
+        <div className="relative aspect-video bg-black rounded-xl overflow-hidden shadow-lg">
+          <iframe
+            src={src}
+            title="Construction process video"
+            className="w-full h-full"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export const HomePage = () => {
   return (
@@ -32,6 +88,9 @@ From Foundation to Finishing — We Build It All"
         <StatsSection />
         <BranchesSection />
         <ProcessSection />
+
+        <ConstructionVideoSection />
+
         <ServicesSection />
       <ReviewsSection Button={true}/>
         <TestimonialsContactAndFooterTemplate />

@@ -1,7 +1,6 @@
 import { Navbar } from '../components/organisms/Navbar';
 import { TestimonialsContactAndFooterTemplate } from '../components/templates/TestimonialsAndContact';
 import { PageHero } from '../components/organisms/PageHero';
-import { AboutGrid } from '../components/organisms/AboutGrid';
 import { PastProjects } from '../components/organisms/PastProjects';
 import { StatsSection } from '../components/organisms/StatsAndBranches';
 import { MessageCircle, Building2, ShieldCheck, Sparkles, Timer, SmilePlus, PhoneCall } from 'lucide-react';
@@ -180,7 +179,6 @@ export const AboutPage = () => {
         </section>
 
         <StatsSection />
-        <AboutGrid />
         <PastProjects />
 
       </main>
