@@ -3,7 +3,7 @@ import { TestimonialsContactAndFooterTemplate } from '../components/templates/Te
 import { PageHero } from '../components/organisms/PageHero';
 import { PastProjects } from '../components/organisms/PastProjects';
 import { StatsSection } from '../components/organisms/StatsAndBranches';
-import { MessageCircle, Building2, ShieldCheck, Sparkles, Timer, SmilePlus, PhoneCall } from 'lucide-react';
+import { Building2, ShieldCheck, Sparkles, Timer, SmilePlus, PhoneCall } from 'lucide-react';
 import AboutUs from '../assets/About/about-hero.png';
 import { motion } from 'motion/react';
 import { TbBrandWhatsappFilled } from "react-icons/tb";

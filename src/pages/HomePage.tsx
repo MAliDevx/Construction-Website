@@ -1,4 +1,4 @@
-import { MessageCircle, Phone, PhoneCall } from 'lucide-react';
+import { PhoneCall } from 'lucide-react';
 import { Navbar } from '../components/organisms/Navbar';
 import { StatsSection, BranchesSection } from '../components/organisms/StatsAndBranches';
 import { ProcessSection } from '../components/organisms/ConstructionProcess';
