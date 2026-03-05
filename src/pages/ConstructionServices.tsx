@@ -1,7 +1,6 @@
 import { Navbar } from '../components/organisms/Navbar';
 import { TestimonialsContactAndFooterTemplate } from '../components/templates/TestimonialsAndContact';
-import { ServicesGrid } from '../components/organisms/ServicesGrid';
-import { MessageCircle, PhoneCall } from 'lucide-react';
+import { PhoneCall } from 'lucide-react';
 import { PageHero } from '../components/organisms/PageHero';
 import Hero from '../assets/Services/ConstructionServices.png';
 import AboutService from '../assets/Services/ConstructionServicesAbout.png';
