@@ -48,7 +48,6 @@ export const Navbar = () => {
               </NavLink>
             ))}
 
-            {/* Desktop Button (only desktop) */}
             <Button
               variant="primary"
               icon={<Phone size={18} />}
